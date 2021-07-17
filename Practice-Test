@@ -1,0 +1,37 @@
+select first_name from customer order by first_name
+
+select last_name from customer order by last_name desc
+
+select first_name, last_name from customer order by first_name asc, last_name desc
+ 
+select first_name, length(first_name) namelength from customer order by namelength
+select first_name, length(first_name) namelength from customer order by namelength desc
+
+select first_name, last_name from customer where last_name='Rodriguez' OR first_name='Adam'
+
+select salesman.name as "Salesman", customer.cust_name, customer.city from salesman, customer 
+where salesman.city=customer.city;
+
+select first_name, last_name from customer where first_name like 'Ann%'
+
+select last_name, length(first_name) namelength from customer where first_name 
+like 'A%' and length(first_name) between 3 and 5 order by namelength
+
+select first_name, last_name from customer where first_name like 'Bra%' and last_name !='Motley' 
+
+select customer.customer_id, first_name, last_name, amount, payment_date 
+from customer, payment where amount>0.99
+
+select film_id, title, rental_rate from film where rental_rate>(select avg(rental_rate) from film)
+order by rental_rate
+
+select film_id from inventory inner join rental on inventory.inventory_id=rental.inventory_id 
+where return_date between '2005-05-29' and '2005-05-30'
+
+
+
+
+
+
+
+
